@@ -1,0 +1,1 @@
+# rearct-django-wagtail
