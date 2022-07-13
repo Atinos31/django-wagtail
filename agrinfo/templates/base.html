@@ -1,0 +1,63 @@
+{% load static wagtailcore_tags wagtailuserbar %}
+
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="description" content="site description minimum 50characters maximum 130characters" />
+        <meta name="keywords" content="7 series of keywords relevant to agrinfor separated by comma, main words ppeople can use to search for our site">
+        <meta name="viewport" content="width=device-width, initial-scale=1" /> <!--setting site responsivity -->
+        <link rel="canonical" href="#"> <!-- tells search engines like google what the true source/root of the page is, for better performance-->
+        <meta name="robots" content="index, follow"><!-- tells search engine wheather they can follow your page or not , if the page has a privacy policy then this can be set to noindex no follow-->
+        <!-- twitter -->
+        <link rel="icon" type="image/png" href="/static/images/favicon.png">
+        <meta name="twitter:card" content="summary">
+        <meta name="twitter:title" content="AGRINFO">
+        <meta name="twitter:description" content="">
+        <meta name="twitter:image" content="url to image"><!-- include  mockup image-->
+        <meta name="twitter:image:alt" content="alt text for images for the visually impaired"> 
+
+       <!-- facebook, linkedin, google -->
+       <meta property="og:type" content="article" />
+       <meta name="image" property="og:image" content="url to respon
+       
+       
+       sive site mock up image">
+      <meta property="og:image:alt" content="Alt text to image" />
+      <meta property="og:url" content="urldeployedsite" /> 
+       <meta property="og:site_name" content="AGRI INFO" />
+        <meta property="og:title" content="AGRI INFO" /> 
+       <meta name="author" content="agrinfo">
+       <meta property="og:description" content="" />
+       {# Global stylesheets #}
+        <link rel="stylesheet" type="text/css" href="{% static 'css/agrinfo.css' %}">
+        <!-- SOCIAL MEDIA META TAGS  to make site pop on social -->
+        <link rel="apple-touch-icon" href="/favicon.png">
+       <title>
+            {% block title %}
+            {% if page.seo_title %}{{ page.seo_title }}{% else %}{{ page.title }}{% endif %}
+            {% endblock %}
+            {% block title_suffix %}
+            {% wagtail_site as current_site %}
+            {% if current_site and current_site.site_name %}- {{ current_site.site_name }}{% endif %}
+            {% endblock %}
+        </title>
+
+        {% block extra_css %}
+        {# Override this in templates to add extra stylesheets #}
+        {% endblock %}
+    </head>
+
+    <body class="{% block body_class %}{% endblock %}">
+        {% wagtailuserbar %}
+
+        {% block content %}{% endblock %}
+
+        {# Global javascript #}
+        <script type="text/javascript" src="{% static 'js/agrinfo.js' %}"></script>
+
+        {% block extra_js %}
+        {# Override this in templates to add extra javascript #}
+        {% endblock %}
+    </body>
+</html>
