@@ -1,5 +1,5 @@
 {% extends "base.html" %}
-{% load static %}
+{% load static wagtailimages_tags  wagtailcore_tags cache %}
 
 {% block body_class %}template-homepage{% endblock %}
 
@@ -11,7 +11,9 @@
 {% endblock extra_css %}
 
 {% block content %}
-<h1 class="bold-text">Hello world!</h1>
+
+<h1>Welcome to agri info</h1>
 <h3>{{ page.banner_title }}</h3>
+
 
 {% endblock content %}
