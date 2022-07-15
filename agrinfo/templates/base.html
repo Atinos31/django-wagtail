@@ -19,10 +19,7 @@
 
        <!-- facebook, linkedin, google -->
        <meta property="og:type" content="article" />
-       <meta name="image" property="og:image" content="url to respon
-       
-       
-       sive site mock up image">
+       <meta name="image" property="og:image" content="url to responsive site mock up image">
       <meta property="og:image:alt" content="Alt text to image" />
       <meta property="og:url" content="urldeployedsite" /> 
        <meta property="og:site_name" content="AGRI INFO" />
@@ -31,8 +28,11 @@
        <meta property="og:description" content="" />
        {# Global stylesheets #}
         <link rel="stylesheet" type="text/css" href="{% static 'css/agrinfo.css' %}">
+        <link rel="stylesheet" type="text/css" href="{% static 'css/bootstrap.css' %}">
+
         <!-- SOCIAL MEDIA META TAGS  to make site pop on social -->
         <link rel="apple-touch-icon" href="/favicon.png">
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
        <title>
             {% block title %}
             {% if page.seo_title %}{{ page.seo_title }}{% else %}{{ page.title }}{% endif %}
@@ -51,9 +51,27 @@
     <body class="{% block body_class %}{% endblock %}">
         {% wagtailuserbar %}
 
+       <main>
         {% block content %}{% endblock %}
+       </main>
+       <footer>
+        <!-- if social media links exist then display clickable link -->
+        {% if settings.site_settings.SocialMediaSettings.instagram %}
+        <p>Follow us on: </p>
+        <ul class="social-media">
+            <li>
+            <a href="{{ settings.site_settings.SocialMediaSettings.instagram }}"> instagram</a></li>
+           <li><a href="{{ settings.site_settings.SocialMediaSettings.facebook }}">facebook</a></li>
+            <li><a href="{{ settings.site_settings.SocialMediaSettings.linkedin }}">linkedin</a></li>
+          <li><a href="{{ settings.site_settings.SocialMediaSettings.twitter }}">twitter</a></li>
+            <li><a href="{{ settings.site_settings.SocialMediaSettings.youtube }}">youtube</a></li>
+        </ul>
+        {% endif %}
+       </footer>
 
         {# Global javascript #}
+        
+          <script type="text/javascript" src="{% static 'js/index.js' %}"></script>
         <script type="text/javascript" src="{% static 'js/agrinfo.js' %}"></script>
 
         {% block extra_js %}
