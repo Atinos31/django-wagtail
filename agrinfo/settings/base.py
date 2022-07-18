@@ -27,9 +27,12 @@ INSTALLED_APPS = [
     "home",
     "search",
     "generic",
+    "legislations",
     "site_settings",
+    "testimonials",
     "wagtail.contrib.forms",
     "wagtail.contrib.redirects",
+     "wagtail.contrib.modeladmin",
     'wagtail.contrib.settings',
     "wagtail.embeds",
     "wagtail.sites",
@@ -48,6 +51,7 @@ INSTALLED_APPS = [
     "django.contrib.sessions",
     "django.contrib.messages",
     "django.contrib.staticfiles",
+    "django_countries"
 ]
 
 MIDDLEWARE = [
@@ -177,3 +181,7 @@ WAGTAILSEARCH_BACKENDS = {
 # Base URL to use when referring to full URLs within the Wagtail admin backend -
 # e.g. in notification emails. Don't include '/admin' or a trailing slash
 WAGTAILADMIN_BASE_URL = "http://example.com"
+
+WAGTAIL_DATE_FORMAT = '%Y-%m-%d'
+DATE_INPUT_FORMATS = ['%Y-%m-%d']
+WAGTAIL_TIME_FORMAT = '%H:%M'

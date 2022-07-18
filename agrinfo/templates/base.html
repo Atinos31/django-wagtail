@@ -32,6 +32,8 @@
 
         <!-- SOCIAL MEDIA META TAGS  to make site pop on social -->
         <link rel="apple-touch-icon" href="/favicon.png">
+            <!--font awesome-->
+        <script src="https://kit.fontawesome.com/e9c73d7092.js" crossorigin="anonymous"></script>
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
        <title>
             {% block title %}
@@ -50,25 +52,16 @@
 
     <body class="{% block body_class %}{% endblock %}">
         {% wagtailuserbar %}
+          {% include "includes/header.html" %}
+        {% block banner %}{% endblock %}
+        <main id="content" class="container my-4" role="main">
 
-       <main>
         {% block content %}{% endblock %}
-       </main>
-       <footer>
-        <!-- if social media links exist then display clickable link -->
-        {% if settings.site_settings.SocialMediaSettings.instagram %}
-        <p>Follow us on: </p>
-        <ul class="social-media">
-            <li>
-            <a href="{{ settings.site_settings.SocialMediaSettings.instagram }}"> instagram</a></li>
-           <li><a href="{{ settings.site_settings.SocialMediaSettings.facebook }}">facebook</a></li>
-            <li><a href="{{ settings.site_settings.SocialMediaSettings.linkedin }}">linkedin</a></li>
-          <li><a href="{{ settings.site_settings.SocialMediaSettings.twitter }}">twitter</a></li>
-            <li><a href="{{ settings.site_settings.SocialMediaSettings.youtube }}">youtube</a></li>
-        </ul>
-        {% endif %}
-       </footer>
+        </main>
 
+      
+      
+        {% include "includes/footer.html" %}
         {# Global javascript #}
         
           <script type="text/javascript" src="{% static 'js/index.js' %}"></script>

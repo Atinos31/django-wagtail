@@ -5,7 +5,7 @@ html{
 }
 main,
 footer{
-    max-width: 70%;
+    max-width: 100%;
     margin:0 auto;
 }
 .block-heading{
@@ -21,6 +21,7 @@ footer{
 }
 
 footer {
+    max-width: 100%;
     align-items: center;
     padding-top: 50px;
     padding-bottom: 50px;
