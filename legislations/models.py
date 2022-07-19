@@ -38,7 +38,7 @@ class LegislationPage(Page):
         blank=False)
     countries = CountryField(multiple=True)
     date_issued = models.DateField(auto_now_add=False, auto_now=False, blank=True)
-    date_into_practice = models.DateField(auto_now_add=False, auto_now=False, blank=True)
+    date_into_practice = models.DateField(auto_now_add=False, auto_now=False, blank=True, null=True)
     internal_page = models.ForeignKey(
         'wagtailcore.Page',
         blank=True,
