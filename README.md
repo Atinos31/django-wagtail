@@ -1,3 +1,4 @@
+learnwagtail.io
 * django-wagtail
 * install python .
 * python -v to check version
@@ -15,8 +16,10 @@
 * pip show wagtail
 * pip freeze
 * wagtail start project .
-
 * python -m venv env
 * gitpod /workspace/django-wagtail (main) $ source env/bin/activate
+
+
+newsletter wagtail - engineertodeveloper.com
 
 

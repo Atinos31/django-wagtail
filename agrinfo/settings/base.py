@@ -27,12 +27,16 @@ INSTALLED_APPS = [
     "home",
     "search",
     "generic",
+    "services",
+    "mjml",
+    "birdsong",
+    "newsletter",
     "legislations",
     "site_settings",
     "testimonials",
     "wagtail.contrib.forms",
     "wagtail.contrib.redirects",
-     "wagtail.contrib.modeladmin",
+    "wagtail.contrib.modeladmin",
     'wagtail.contrib.settings',
     "wagtail.embeds",
     "wagtail.sites",
@@ -185,3 +189,7 @@ WAGTAILADMIN_BASE_URL = "http://example.com"
 WAGTAIL_DATE_FORMAT = '%Y-%m-%d'
 DATE_INPUT_FORMATS = ['%Y-%m-%d']
 WAGTAIL_TIME_FORMAT = '%H:%M'
+
+MJML_EXEC_CMD = './node_modules/.bin/mjml'
+
+MJML_EXEC_CMD = './node_modules/.bin/mjml'
